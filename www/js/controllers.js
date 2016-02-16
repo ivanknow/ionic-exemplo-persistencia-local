@@ -1,10 +1,14 @@
 angular.module('minhasContas.controllers', [])
   
-.controller('minhasContasCtrl', function($scope) {
+.controller('minhasContasCtrl', function($scope,ContasService) {
 var vm = this;
 vm.total = 0;
 vm.itemAtual = {};
 vm.listaValores = [];
+var all = ContasService.getAll(); 
+if(all!==undefined){
+	vm.listaValores = all;
+}
 vm.addValor = function(){
 	
 	if(!vm.itemAtual.valor.match(/^-?\d*(\,\d+)?$/)){
@@ -19,6 +23,7 @@ vm.addValor = function(){
 	}
 	
 	vm.listaValores.push(vm.itemAtual);
+	ContasService.update(vm.listaValores);
 	vm.itemAtual = {};	
 	vm.getSaldo();
 	
@@ -29,6 +34,7 @@ vm.removeValor = function(index){
 	if (index > -1) {
 		vm.listaValores.splice(index, 1);
 	}
+	ContasService.update(vm.listaValores);
 	vm.getSaldo();
 	
 };

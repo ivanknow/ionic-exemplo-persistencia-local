@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('minhasContas', ['ionic', 'minhasContas.controllers', 'minhasContas.routes', 'minhasContas.services', 'minhasContas.directives',"angular-cache"])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,CacheFactory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
