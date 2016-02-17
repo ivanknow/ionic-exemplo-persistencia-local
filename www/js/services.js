@@ -3,7 +3,7 @@ angular.module('minhasContas.services', [])
 .factory('ContasService',
 		function (CacheFactory) {
 
-	var self = this;
+	/*var self = this;
 	self.contasCache = null;
 
 	activate();
@@ -24,7 +24,7 @@ angular.module('minhasContas.services', [])
 	function getAll() {
 		return self.contasCache.get('data');
 
-	}
+	}*/
 })
 
 .service('BlankService', [ function() {

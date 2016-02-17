@@ -7,10 +7,7 @@ angular.module('minhasContas.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-      
-        
-    .state('minhasContas', {
+  .state('minhasContas', {
       url: '/minhascontas',
       templateUrl: 'templates/minhasContas.html',
       controller: 'minhasContasCtrl'
