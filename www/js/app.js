@@ -1,21 +1,3 @@
-angular.module('ionic.utils', [])
-
-.factory('$localstorage', ['$window', function($window) {
-  return {
-    set: function(key, value) {
-      $window.localStorage[key] = value;
-    },
-    get: function(key, defaultValue) {
-      return $window.localStorage[key] || defaultValue;
-    },
-    setObject: function(key, value) {
-      $window.localStorage[key] = JSON.stringify(value);
-    },
-    getObject: function(key) {
-      return JSON.parse($window.localStorage[key] || '{}');
-    }
-  }
-}]);
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -23,9 +5,9 @@ angular.module('ionic.utils', [])
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('minhasContas', ['ionic','ionic.utils', 'minhasContas.controllers', 'minhasContas.routes', 'minhasContas.services', 'minhasContas.directives'])
+angular.module('minhasContas', ['ionic', 'minhasContas.controllers', 'minhasContas.routes', 'minhasContas.services', 'minhasContas.directives'])
 
-.run(function($ionicPlatform,$localstorage) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -36,7 +18,6 @@ angular.module('minhasContas', ['ionic','ionic.utils', 'minhasContas.controllers
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    $localstorage.setObject('contas', []);
    // CacheFactory.createCache("contasCache", {storageMode: "localStorage"});
   });
 })
