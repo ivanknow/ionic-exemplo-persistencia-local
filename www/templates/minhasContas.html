@@ -1,6 +1,6 @@
 <ion-view title="Minhas Contas" ng-controller="minhasContasCtrl as vm">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
- <form class="list">
+ <form class="list" name="valorForm">
                 <label class="item item-input">
                     <span class="input-label">Título</span>
                     <input type="text"  ng-model="vm.itemAtual.titulo" placeholder="">
@@ -9,7 +9,7 @@
                     <span class="input-label">Valor</span>
                     <input  ng-model="vm.itemAtual.valor" type="number" step="0.01">
                 </label>
-                <button class="button button-positive button-block " ng-click="vm.addValor()">Adicionar</button>
+                <button class="button button-positive button-block " ng-click="valorForm.$valid && vm.addValor()">Adicionar</button>
                 <h3>Saldo:{{vm.total}}</h3>
             </form>        
 	<ion-list>

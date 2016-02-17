@@ -1,7 +1,7 @@
 angular.module('minhasContas.services', [])
 
 .factory('ContasService',
-		function (CacheFactory) {
+		function () {
 
 	/*var self = this;
 	self.contasCache = null;

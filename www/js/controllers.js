@@ -1,16 +1,16 @@
 angular.module('minhasContas.controllers', [])
 
-.controller('minhasContasCtrl', function($scope,$localstorage) {
+.controller('minhasContasCtrl', function($scope) {
 	var vm = this;
 	vm.total = 0;
 	vm.itemAtual = {};
-	vm.listaValores = $localstorage.getObject('contas');
+	vm.listaValores = [];
 	vm.addValor = function() {
 
 		vm.listaValores.push(vm.itemAtual);
 		vm.itemAtual = {};
 		vm.getSaldo();
-		localstorage.setObject('contas',vm.listaValores);
+
 	};
 
 	vm.removeValor = function(index) {
@@ -19,7 +19,7 @@ angular.module('minhasContas.controllers', [])
 			vm.listaValores.splice(index, 1);
 		}
 		vm.getSaldo();
-		localstorage.setObject('contas',vm.listaValores);
+		
 	};
 
 	vm.getSaldo = function() {
